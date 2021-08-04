@@ -1,4 +1,4 @@
-const { Router } = require('express')
+import { Router } from 'express'
 
 // instanciando a rota
 const routes = new Router()
@@ -9,4 +9,4 @@ routes.get('/', (req, res) => {// rota principal
 })
 
 // exportar o router para poder consumir ele no arquivo app.js
-module.exports = routes
+export default routes

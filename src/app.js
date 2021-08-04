@@ -1,5 +1,5 @@
-const express = require('express')
-const routes = require('./router')
+import express from 'express'
+import routes from './router'
 
 class App {
 
@@ -22,4 +22,4 @@ class App {
 }
 
 // exportar a instancia de uma classe
-module.exports = new App().server
+export default new App().server
