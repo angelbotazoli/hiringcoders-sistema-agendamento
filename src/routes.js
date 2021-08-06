@@ -1,21 +1,11 @@
 import { Router } from 'express'
-import User from './app/models/User'
+import UserController from './app/controllers/UserController'
 
 // instanciando a rota
 const routes = new Router()
 
-// invocar o router
-// estamos tratando um bd entao por padrao deve se usar o metodo assincrono (salva e aguarda retorno)
-routes.get('/', async (req, res) => {// rota principal
-    //forcando uma gravacao no bd
-    const user = await User.create({
-        name: 'Angelica',
-        email: 'angel@email.com',
-        password_hash: '123456'
-    })
-
-    return res.json(user)
-})
+//recebe as informacoes e salva no bd
+routes.post('/users', UserController.store)
 
 // exportar o router para poder consumir ele no arquivo app.js
 export default routes
