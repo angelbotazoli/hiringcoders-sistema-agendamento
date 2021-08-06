@@ -1,7 +1,7 @@
 import User from '../models/User'
 
 class UserController {
-    async store(req, res) {
+    async store(req, res) { //só pode existir um store por classe
 
         const userExists = await User.findOne({
             where: {
